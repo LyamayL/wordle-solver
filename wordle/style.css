@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "Clear Sans";
+    src: url("./font/ClearSans-Bold.ttf") format("truetype");
+    font-weight: bolder;
+}
+
+*{
+    font-family: "Clear Sans";
+}
+
+body{
+
+    background-color: #0E0E0F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.grid-container{
+    height: min(650px, 75%);
+    width: min(500px, 75%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.line{
+    width: 100%;
+    height: 15%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.case{
+    aspect-ratio: 1/1;
+    height: 100%;
+    border-radius: 9px;
+    border: 3px solid #2f2f2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.case_good{
+    animation: flip_good 400ms ease-in-out;  
+    /* stagger */
+    animation-delay: calc(var(--i) * 350ms);      
+    /* Applique les propriétés de la premiere frame de l'annimation pour éviter que les fonds soient chargés*/
+    animation-fill-mode: backwards;
+    background-color: #538d4e;
+    border-color: #538d4e;
+}
+
+.case_mid{
+    animation: flip_mid 400ms ease-in-out;
+    /* stagger */
+    animation-delay: calc(var(--i) * 350ms);
+    /* Applique les propriétés de la premiere frame de l'annimation pour éviter que les fonds soient chargés*/
+    animation-fill-mode: backwards;
+    background-color: #cd8729;
+    border-color: #cd8729;
+}
+
+.case_wrong{
+    animation: flip_wrong 400ms ease-in-out;
+    /* stagger : s'applque a toutes les animations si on ne précise pas laquelle */
+    animation-delay: calc(var(--i) * 350ms);
+    /* Applique les propriétés de la premiere frame de l'annimation pour éviter que les fonds soient chargés*/
+    animation-fill-mode: backwards;
+    background-color: #3a3a3c;
+    border-color: #3a3a3c;
+}
+
+@keyframes flip_good {
+    0% {
+        transform: rotateX(0deg);
+        background-color: #0E0E0F;
+        border-color: #2f2f2f;
+    }
+    50% {
+        transform: rotateX(90deg);
+        background-color: #0E0E0F;
+        border-color: #2f2f2f;
+    }
+    51% {
+        transform: rotateX(90deg);
+        background-color: #538d4e;
+        border-color: #538d4e;
+    }
+    100% {
+        transform: rotateX(0deg);
+        background-color: #538d4e;
+        border-color: #538d4e;
+    }
+}
+
+@keyframes flip_mid {
+    0% {
+        transform: rotateX(0deg);
+        background-color: #0E0E0F;
+        border-color: #2f2f2f;
+    }
+    50% {
+        transform: rotateX(90deg);
+        background-color: #0E0E0F;
+        border-color: #2f2f2f;
+    }
+    51% {
+        transform: rotateX(90deg);
+        background-color: #cd8729;
+        border-color: #cd8729;
+    }
+    100% {
+        transform: rotateX(0deg);
+        background-color: #cd8729;
+        border-color: #cd8729;
+    }
+}
+
+@keyframes flip_wrong {
+    0% {
+        transform: rotateX(0deg);
+        background-color: #0E0E0F;
+        border-color: #2f2f2f;
+    }
+    50% {
+        transform: rotateX(90deg);
+        background-color: #0E0E0F;
+        border-color: #2f2f2f;
+    }
+    51% {
+        transform: rotateX(90deg);
+        background-color: #3a3a3c;
+        border-color: #3a3a3c;
+    }
+    100% {
+        transform: rotateX(0deg);
+        background-color: #3a3a3c;
+        border-color: #3a3a3c;
+    }
+}
